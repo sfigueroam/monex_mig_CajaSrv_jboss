@@ -1,0 +1,5 @@
+CajaServicesControls/EjbCajaServicesLog.class
+locator/ServicesLocator.class
+org/openuri/RecaServices_RecaServicesSoapImpl.class
+CajaServicesControls/EjbCajaServices.class
+CajaServicesControls/EjbCajaServicesTrx.class

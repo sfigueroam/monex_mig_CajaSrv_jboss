@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @editor-info:link autogen="false" source="" -->
+<wsdl:definitions xmlns:conv="http://www.openuri.org/2002/04/soap/conversation/" xmlns:cw="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:jms="http://www.openuri.org/2002/04/wsdl/jms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.openuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.openuri.org/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.openuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:ope="http://www.openuri.org/">
+      <s:element name="consultarAvisoRecibo">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="oficinaId" type="s:decimal" minOccurs="0"/>
+            <s:element name="avisoReciboCodigo" type="s:string" minOccurs="0"/>
+            <s:element name="formTipo" type="s:decimal" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarAvisoReciboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="consultarAvisoReciboResult" type="ope:ConsultarAvisoReciboResult" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarAvisoReciboResult" nillable="true" type="ope:ConsultarAvisoReciboResult"/>
+      <s:element name="consultarDeuda">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="oficinaId" type="s:decimal" minOccurs="0"/>
+            <s:element name="clave" type="ope:RecaClave" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="consultarDeudaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="consultarDeudaResult" type="ope:ConsultarDeudaResult" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="pagarAvisoRecibo">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="oficinaId" type="s:decimal" minOccurs="0"/>
+            <s:element name="terminal" type="s:string" minOccurs="0"/>
+            <s:element name="turnoInicio" type="s:dateTime" minOccurs="0"/>
+            <s:element name="operacionFecha" type="s:dateTime" minOccurs="0"/>
+            <s:element name="operacionFolio" type="s:decimal" minOccurs="0"/>
+            <s:element name="operacionSecuencia" type="s:decimal" minOccurs="0"/>
+            <s:element name="avisoReciboFuente" type="s:string" minOccurs="0"/>
+            <s:element name="avisoReciboCodigo" type="s:string" minOccurs="0"/>
+            <s:element name="folioF01" type="s:decimal" minOccurs="0"/>
+            <s:element name="montoPagado" type="s:decimal" minOccurs="0"/>
+            <s:element name="medioPago" type="ope:MedioPago" minOccurs="0"/>
+            <s:element name="ingresoForzado" type="s:boolean" minOccurs="0"/>
+            <s:element name="claveDeuda" type="ope:RecaClave" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="pagarAvisoReciboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pagarAvisoReciboResult" type="s:decimal" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reversarPagoAvisoRecibo">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="oficinaId" type="s:decimal" minOccurs="0"/>
+            <s:element name="terminal" type="s:string" minOccurs="0"/>
+            <s:element name="turnoInicio" type="s:dateTime" minOccurs="0"/>
+            <s:element name="operacionFecha" type="s:dateTime" minOccurs="0"/>
+            <s:element name="operacionFolio" type="s:decimal" minOccurs="0"/>
+            <s:element name="operacionSecuencia" type="s:decimal" minOccurs="0"/>
+            <s:element name="avisoReciboFuente" type="s:string" minOccurs="0"/>
+            <s:element name="avisoReciboCodigo" type="s:string" minOccurs="0"/>
+            <s:element name="folioF01" type="s:decimal" minOccurs="0"/>
+            <s:element name="montoPagado" type="s:decimal" minOccurs="0"/>
+            <s:element name="ingresoForzado" type="s:boolean" minOccurs="0"/>
+            <s:element name="claveDeuda" type="ope:RecaClave" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reversarPagoAvisoReciboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="reversarPagoAvisoReciboResult" type="s:decimal" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="extraerTablaOficinas">
+        <s:complexType>
+          <s:sequence/>
+        </s:complexType>
+      </s:element>
+      <s:element name="extraerTablaOficinasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="extraerTablaOficinasResult" type="ope:ArrayOfOficina" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfOficina" nillable="true" type="ope:ArrayOfOficina"/>
+      <s:element name="extraerHoraServidor">
+        <s:complexType>
+          <s:sequence/>
+        </s:complexType>
+      </s:element>
+      <s:element name="extraerHoraServidorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="extraerHoraServidorResult" type="s:string" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string"/>
+      <s:element name="pagoArCajaVaxSaf">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="folioEnvio" type="s:decimal" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="pagoArCajaVaxSafResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="pagoArCajaVaxSafResult" type="ope:ProcesaTrnSafResult" minOccurs="0"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcesaTrnSafResult" nillable="true" type="ope:ProcesaTrnSafResult"/>
+      <s:complexType name="ConsultarAvisoReciboResult">
+        <s:sequence>
+          <s:element name="recaDeuda" type="ope:RecaDeuda" minOccurs="0"/>
+          <s:element name="codigoRetorno" type="s:int"/>
+          <s:element name="mensajeRetorno" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RecaDeuda">
+        <s:sequence>
+          <s:element name="recaClave" type="ope:RecaClave" minOccurs="0"/>
+          <s:element name="fechaValidez" type="s:dateTime" minOccurs="0"/>
+          <s:element name="fechaEmision" type="s:dateTime" minOccurs="0"/>
+          <s:element name="fechaLiquidacion" type="s:dateTime" minOccurs="0"/>
+          <s:element name="monedaId" type="s:decimal" minOccurs="0"/>
+          <s:element name="montoEnPlazo" type="s:decimal" minOccurs="0"/>
+          <s:element name="montoReajustes" type="s:decimal" minOccurs="0"/>
+          <s:element name="montoIntereses" type="s:decimal" minOccurs="0"/>
+          <s:element name="montoCondonacion" type="s:decimal" minOccurs="0"/>
+          <s:element name="montoMultas" type="s:decimal" minOccurs="0"/>
+          <s:element name="montoTotal" type="s:decimal" minOccurs="0"/>
+          <s:element name="avisoReciboFuente" type="s:string" minOccurs="0"/>
+          <s:element name="avisoReciboCodigo" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RecaClave">
+        <s:sequence>
+          <s:element name="clienteTipo" type="s:decimal" minOccurs="0"/>
+          <s:element name="rutRol" type="s:string" minOccurs="0"/>
+          <s:element name="institId" type="s:decimal" minOccurs="0"/>
+          <s:element name="formTipo" type="s:decimal" minOccurs="0"/>
+          <s:element name="formFolio" type="s:decimal" minOccurs="0"/>
+          <s:element name="formVersion" type="s:decimal" minOccurs="0"/>
+          <s:element name="periodo" type="s:dateTime" minOccurs="0"/>
+          <s:element name="vencimiento" type="s:dateTime" minOccurs="0"/>
+          <s:element name="moneda" type="s:decimal" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsultarDeudaResult">
+        <s:sequence>
+          <s:element name="recaDeudaArr" type="ope:ArrayOfRecaDeuda" minOccurs="0"/>
+          <s:element name="codigoRetorno" type="s:int"/>
+          <s:element name="mensajeRetorno" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRecaDeuda">
+        <s:sequence>
+          <s:element name="RecaDeuda" type="ope:RecaDeuda" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MedioPago">
+        <s:sequence>
+          <s:element name="nemo" type="s:string" minOccurs="0"/>
+          <s:element name="fecha" type="s:dateTime" minOccurs="0"/>
+          <s:element name="cheque" type="ope:Cheque" minOccurs="0"/>
+          <s:element name="tarjeta" type="ope:Tarjeta" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cheque">
+        <s:sequence>
+          <s:element name="fecha" type="s:dateTime" minOccurs="0"/>
+          <s:element name="banco" type="s:decimal" minOccurs="0"/>
+          <s:element name="plaza" type="s:decimal" minOccurs="0"/>
+          <s:element name="cuenta" type="s:decimal" minOccurs="0"/>
+          <s:element name="serie" type="s:decimal" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Tarjeta">
+        <s:sequence>
+          <s:element name="tarjetaTipo" type="s:string" minOccurs="0"/>
+          <s:element name="tarjetaMarca" type="s:string" minOccurs="0"/>
+          <s:element name="autorizadorFecha" type="s:dateTime" minOccurs="0"/>
+          <s:element name="autorizadorTipo" type="s:string" minOccurs="0"/>
+          <s:element name="autorizadorCodigo" type="s:string" minOccurs="0"/>
+          <s:element name="cuotaTipo" type="s:string" minOccurs="0"/>
+          <s:element name="cuotaNumero" type="s:decimal" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOficina">
+        <s:sequence>
+          <s:element name="Oficina" type="ope:Oficina" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Oficina">
+        <s:sequence>
+          <s:element name="rutIra" type="s:decimal" minOccurs="0"/>
+          <s:element name="dvIra" type="s:string" minOccurs="0"/>
+          <s:element name="codigoABIF" type="s:decimal" minOccurs="0"/>
+          <s:element name="oficinaNombre" type="s:string" minOccurs="0"/>
+          <s:element name="oficinaConara" type="s:decimal" minOccurs="0"/>
+          <s:element name="oficinaNumero" type="s:decimal" minOccurs="0"/>
+          <s:element name="oficinaCuentaCte" type="s:decimal" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProcesaTrnSafResult">
+        <s:sequence>
+          <s:element name="ResultCode" type="s:decimal" minOccurs="0"/>
+          <s:element name="ResultMessage" type="s:string" minOccurs="0"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+
+  </wsdl:types>
+  <wsdl:message name="consultarAvisoReciboSoapIn">
+    <wsdl:part name="parameters" element="s0:consultarAvisoRecibo"/>
+  </wsdl:message>
+  <wsdl:message name="consultarAvisoReciboSoapOut">
+    <wsdl:part name="parameters" element="s0:consultarAvisoReciboResponse"/>
+  </wsdl:message>
+  <wsdl:message name="consultarDeudaSoapIn">
+    <wsdl:part name="parameters" element="s0:consultarDeuda"/>
+  </wsdl:message>
+  <wsdl:message name="consultarDeudaSoapOut">
+    <wsdl:part name="parameters" element="s0:consultarDeudaResponse"/>
+  </wsdl:message>
+  <wsdl:message name="pagarAvisoReciboSoapIn">
+    <wsdl:part name="parameters" element="s0:pagarAvisoRecibo"/>
+  </wsdl:message>
+  <wsdl:message name="pagarAvisoReciboSoapOut">
+    <wsdl:part name="parameters" element="s0:pagarAvisoReciboResponse"/>
+  </wsdl:message>
+  <wsdl:message name="reversarPagoAvisoReciboSoapIn">
+    <wsdl:part name="parameters" element="s0:reversarPagoAvisoRecibo"/>
+  </wsdl:message>
+  <wsdl:message name="reversarPagoAvisoReciboSoapOut">
+    <wsdl:part name="parameters" element="s0:reversarPagoAvisoReciboResponse"/>
+  </wsdl:message>
+  <wsdl:message name="extraerTablaOficinasSoapIn">
+    <wsdl:part name="parameters" element="s0:extraerTablaOficinas"/>
+  </wsdl:message>
+  <wsdl:message name="extraerTablaOficinasSoapOut">
+    <wsdl:part name="parameters" element="s0:extraerTablaOficinasResponse"/>
+  </wsdl:message>
+  <wsdl:message name="extraerHoraServidorSoapIn">
+    <wsdl:part name="parameters" element="s0:extraerHoraServidor"/>
+  </wsdl:message>
+  <wsdl:message name="extraerHoraServidorSoapOut">
+    <wsdl:part name="parameters" element="s0:extraerHoraServidorResponse"/>
+  </wsdl:message>
+  <wsdl:message name="pagoArCajaVaxSafSoapIn">
+    <wsdl:part name="parameters" element="s0:pagoArCajaVaxSaf"/>
+  </wsdl:message>
+  <wsdl:message name="pagoArCajaVaxSafSoapOut">
+    <wsdl:part name="parameters" element="s0:pagoArCajaVaxSafResponse"/>
+  </wsdl:message>
+  <wsdl:message name="consultarAvisoReciboHttpGetIn">
+    <wsdl:part name="oficinaId" type="s:string"/>
+    <wsdl:part name="avisoReciboCodigo" type="s:string"/>
+    <wsdl:part name="formTipo" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="consultarAvisoReciboHttpGetOut">
+    <wsdl:part name="Body" element="s0:ConsultarAvisoReciboResult"/>
+  </wsdl:message>
+  <wsdl:message name="extraerTablaOficinasHttpGetIn"/>
+  <wsdl:message name="extraerTablaOficinasHttpGetOut">
+    <wsdl:part name="Body" element="s0:ArrayOfOficina"/>
+  </wsdl:message>
+  <wsdl:message name="extraerHoraServidorHttpGetIn"/>
+  <wsdl:message name="extraerHoraServidorHttpGetOut">
+    <wsdl:part name="Body" element="s0:string"/>
+  </wsdl:message>
+  <wsdl:message name="pagoArCajaVaxSafHttpGetIn">
+    <wsdl:part name="folioEnvio" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="pagoArCajaVaxSafHttpGetOut">
+    <wsdl:part name="Body" element="s0:ProcesaTrnSafResult"/>
+  </wsdl:message>
+  <wsdl:message name="consultarAvisoReciboHttpPostIn">
+    <wsdl:part name="oficinaId" type="s:string"/>
+    <wsdl:part name="avisoReciboCodigo" type="s:string"/>
+    <wsdl:part name="formTipo" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="consultarAvisoReciboHttpPostOut">
+    <wsdl:part name="Body" element="s0:ConsultarAvisoReciboResult"/>
+  </wsdl:message>
+  <wsdl:message name="extraerTablaOficinasHttpPostIn"/>
+  <wsdl:message name="extraerTablaOficinasHttpPostOut">
+    <wsdl:part name="Body" element="s0:ArrayOfOficina"/>
+  </wsdl:message>
+  <wsdl:message name="extraerHoraServidorHttpPostIn"/>
+  <wsdl:message name="extraerHoraServidorHttpPostOut">
+    <wsdl:part name="Body" element="s0:string"/>
+  </wsdl:message>
+  <wsdl:message name="pagoArCajaVaxSafHttpPostIn">
+    <wsdl:part name="folioEnvio" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="pagoArCajaVaxSafHttpPostOut">
+    <wsdl:part name="Body" element="s0:ProcesaTrnSafResult"/>
+  </wsdl:message>
+  <wsdl:portType name="RecaServicesSoap">
+    <wsdl:operation name="consultarAvisoRecibo">
+      <wsdl:documentation>&lt;p&gt;Consulta Aviso Recibo.</wsdl:documentation>
+      <wsdl:input message="s0:consultarAvisoReciboSoapIn"/>
+      <wsdl:output message="s0:consultarAvisoReciboSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDeuda">
+      <wsdl:documentation>&lt;p&gt;Consulta Deudas.</wsdl:documentation>
+      <wsdl:input message="s0:consultarDeudaSoapIn"/>
+      <wsdl:output message="s0:consultarDeudaSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="pagarAvisoRecibo">
+      <wsdl:documentation>&lt;p&gt;Pago Aviso Recibo.</wsdl:documentation>
+      <wsdl:input message="s0:pagarAvisoReciboSoapIn"/>
+      <wsdl:output message="s0:pagarAvisoReciboSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="reversarPagoAvisoRecibo">
+      <wsdl:documentation>&lt;p&gt;Reversa Pago Aviso Recibo.</wsdl:documentation>
+      <wsdl:input message="s0:reversarPagoAvisoReciboSoapIn"/>
+      <wsdl:output message="s0:reversarPagoAvisoReciboSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="extraerTablaOficinas">
+      <wsdl:documentation>&lt;p&gt;Extrae Tabla Oficinas TGR.</wsdl:documentation>
+      <wsdl:input message="s0:extraerTablaOficinasSoapIn"/>
+      <wsdl:output message="s0:extraerTablaOficinasSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="extraerHoraServidor">
+      <wsdl:documentation>&lt;p&gt;Extrae Hora Servidor.</wsdl:documentation>
+      <wsdl:input message="s0:extraerHoraServidorSoapIn"/>
+      <wsdl:output message="s0:extraerHoraServidorSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="pagoArCajaVaxSaf">
+      <wsdl:documentation>&lt;p&gt;Pago Aviso Recibo.</wsdl:documentation>
+      <wsdl:input message="s0:pagoArCajaVaxSafSoapIn"/>
+      <wsdl:output message="s0:pagoArCajaVaxSafSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RecaServicesHttpGet">
+    <wsdl:operation name="consultarAvisoRecibo">
+      <wsdl:documentation>&lt;p&gt;Consulta Aviso Recibo.</wsdl:documentation>
+      <wsdl:input message="s0:consultarAvisoReciboHttpGetIn"/>
+      <wsdl:output message="s0:consultarAvisoReciboHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="extraerTablaOficinas">
+      <wsdl:documentation>&lt;p&gt;Extrae Tabla Oficinas TGR.</wsdl:documentation>
+      <wsdl:input message="s0:extraerTablaOficinasHttpGetIn"/>
+      <wsdl:output message="s0:extraerTablaOficinasHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="extraerHoraServidor">
+      <wsdl:documentation>&lt;p&gt;Extrae Hora Servidor.</wsdl:documentation>
+      <wsdl:input message="s0:extraerHoraServidorHttpGetIn"/>
+      <wsdl:output message="s0:extraerHoraServidorHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="pagoArCajaVaxSaf">
+      <wsdl:documentation>&lt;p&gt;Pago Aviso Recibo.</wsdl:documentation>
+      <wsdl:input message="s0:pagoArCajaVaxSafHttpGetIn"/>
+      <wsdl:output message="s0:pagoArCajaVaxSafHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RecaServicesHttpPost">
+    <wsdl:operation name="consultarAvisoRecibo">
+      <wsdl:documentation>&lt;p&gt;Consulta Aviso Recibo.</wsdl:documentation>
+      <wsdl:input message="s0:consultarAvisoReciboHttpPostIn"/>
+      <wsdl:output message="s0:consultarAvisoReciboHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="extraerTablaOficinas">
+      <wsdl:documentation>&lt;p&gt;Extrae Tabla Oficinas TGR.</wsdl:documentation>
+      <wsdl:input message="s0:extraerTablaOficinasHttpPostIn"/>
+      <wsdl:output message="s0:extraerTablaOficinasHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="extraerHoraServidor">
+      <wsdl:documentation>&lt;p&gt;Extrae Hora Servidor.</wsdl:documentation>
+      <wsdl:input message="s0:extraerHoraServidorHttpPostIn"/>
+      <wsdl:output message="s0:extraerHoraServidorHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="pagoArCajaVaxSaf">
+      <wsdl:documentation>&lt;p&gt;Pago Aviso Recibo.</wsdl:documentation>
+      <wsdl:input message="s0:pagoArCajaVaxSafHttpPostIn"/>
+      <wsdl:output message="s0:pagoArCajaVaxSafHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RecaServicesSoap" type="s0:RecaServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="consultarAvisoRecibo">
+      <soap:operation soapAction="http://www.openuri.org/consultarAvisoRecibo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDeuda">
+      <soap:operation soapAction="http://www.openuri.org/consultarDeuda" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pagarAvisoRecibo">
+      <soap:operation soapAction="http://www.openuri.org/pagarAvisoRecibo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reversarPagoAvisoRecibo">
+      <soap:operation soapAction="http://www.openuri.org/reversarPagoAvisoRecibo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="extraerTablaOficinas">
+      <soap:operation soapAction="http://www.openuri.org/extraerTablaOficinas" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="extraerHoraServidor">
+      <soap:operation soapAction="http://www.openuri.org/extraerHoraServidor" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pagoArCajaVaxSaf">
+      <soap:operation soapAction="http://www.openuri.org/pagoArCajaVaxSaf" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RecaServicesHttpGet" type="s0:RecaServicesHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="consultarAvisoRecibo">
+      <http:operation location="/consultarAvisoRecibo"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="extraerTablaOficinas">
+      <http:operation location="/extraerTablaOficinas"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="extraerHoraServidor">
+      <http:operation location="/extraerHoraServidor"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pagoArCajaVaxSaf">
+      <http:operation location="/pagoArCajaVaxSaf"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RecaServicesHttpPost" type="s0:RecaServicesHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="consultarAvisoRecibo">
+      <http:operation location="/consultarAvisoRecibo"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="extraerTablaOficinas">
+      <http:operation location="/extraerTablaOficinas"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="extraerHoraServidor">
+      <http:operation location="/extraerHoraServidor"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pagoArCajaVaxSaf">
+      <http:operation location="/pagoArCajaVaxSaf"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RecaServices">
+    <wsdl:port name="RecaServicesSoap" binding="s0:RecaServicesSoap">
+      <soap:address location="http://localhost:7001/CajaSrv/CajaServices/RecaServices.jws"/>
+    </wsdl:port>
+    <wsdl:port name="RecaServicesHttpGet" binding="s0:RecaServicesHttpGet">
+      <http:address location="http://localhost:7001/CajaSrv/CajaServices/RecaServices.jws"/>
+    </wsdl:port>
+    <wsdl:port name="RecaServicesHttpPost" binding="s0:RecaServicesHttpPost">
+      <http:address location="http://localhost:7001/CajaSrv/CajaServices/RecaServices.jws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

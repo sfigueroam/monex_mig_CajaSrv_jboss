@@ -1,0 +1,7 @@
+cl/teso/reca/pkgcajaserviceslog/PkgCajaServicesLogException.class
+cl/teso/reca/pkgcajaserviceslog/ProcedureCaller.class
+cl/teso/reca/pkgcajaserviceslog/PkgCajaServicesLog.class
+cl/teso/reca/pkgcajaserviceslog/GrabaLogTransaccionCaller.class
+cl/teso/reca/pkgcajaserviceslog/PkgCajaServicesLogRemote.class
+cl/teso/reca/pkgcajaserviceslog/GrabaLogTransaccionResult.class
+cl/teso/reca/pkgcajaserviceslog/PkgCajaServicesLogLocal.class
