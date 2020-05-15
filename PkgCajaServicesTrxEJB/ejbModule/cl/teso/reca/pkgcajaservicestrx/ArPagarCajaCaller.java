@@ -134,6 +134,8 @@ public class ArPagarCajaCaller extends ProcedureCaller
                 call.setBigDecimal(2, inRutIra);
                 call.setString(3, inRutIraDv);
                 call.setString(4, inCodigoBarra);
+                call.setString(5, inIdOrigen);
+                call.setString(6, inPaquete);
                 call.setString(7, inRuta);
                 call.setBigDecimal(8, inFolioF01);
                 call.setTimestamp(9, toTimestamp(inFechaOrigen));

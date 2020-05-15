@@ -17,12 +17,12 @@ cl/teso/reca/cajasrv/pkgcajaservices/GetOficinaDescripcionResult.class
 cl/teso/reca/cajasrv/pkgcajaservices/ProcedureCaller.class
 cl/teso/reca/cajasrv/pkgcajaservices/GetOficinaDescripcionCaller.class
 cl/teso/reca/cajasrv/pkgcajaservices/IngresarArCaller.class
-cl/teso/reca/cajasrv/pkgcajaservices/PkgCajaServicesRemote.class
 cl/teso/reca/cajasrv/pkgcajaservices/PkgCajaServicesException.class
+cl/teso/reca/cajasrv/pkgcajaservices/PkgCajaServicesRemote.class
 cl/teso/reca/cajasrv/pkgcajaservices/ConsultarArResult.class
+cl/teso/reca/cajasrv/pkgcajaservices/GetFormPropertiesCaller.class
 cl/teso/reca/cajasrv/pkgcajaservices/GetFrmIdSafeCaller.class
 cl/teso/reca/cajasrv/pkgcajaservices/GetMapComunasCaller.class
-cl/teso/reca/cajasrv/pkgcajaservices/GetFormPropertiesCaller.class
 cl/teso/reca/cajasrv/pkgcajaservices/GrabaLogTransaccionResult.class
 cl/teso/reca/cajasrv/pkgcajaservices/GetItmCodeUsageCaller.class
 cl/teso/reca/cajasrv/pkgcajaservices/FormPagoCajaCaller.class
@@ -32,8 +32,8 @@ cl/teso/reca/cajasrv/pkgcajaservices/GetItemdescripcionResult.class
 cl/teso/reca/cajasrv/pkgcajaservices/GetFormPropertiesResult.class
 cl/teso/reca/cajasrv/pkgcajaservices/GetItmCodeUsageResult.class
 cl/teso/reca/cajasrv/pkgcajaservices/GetItemdescripcionCaller.class
-cl/teso/reca/cajasrv/pkgcajaservices/GetMapFCaller.class
 cl/teso/reca/cajasrv/pkgcajaservices/GetMapDpsResult.class
+cl/teso/reca/cajasrv/pkgcajaservices/GetMapFCaller.class
 cl/teso/reca/cajasrv/pkgcajaservices/PkgCajaServices.class
 cl/teso/reca/cajasrv/pkgcajaservices/GetFrmIdSafeResult.class
 cl/teso/reca/cajasrv/pkgcajaservices/GetFrmIdCaller.class
