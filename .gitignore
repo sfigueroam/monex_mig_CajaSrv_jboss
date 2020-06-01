@@ -14,10 +14,16 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+RemoteSystemsTempFiles/
+*DS_Store
+*.DS_Store
+
+# External tool builders
+.externalToolBuilders/
+*.DS_Store/
+*DS_Store/
 .DS_Store/
 .DS_Store
-*.DS_Store/
-*.DS_Store
 *.rpm
 *.tar
 *.gz

@@ -1,7 +1,7 @@
-/home/sfigueroa/TGR/RentaMonedaExtranjera/monex_mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/PkgCajaServicesLogLocal.java
-/home/sfigueroa/TGR/RentaMonedaExtranjera/monex_mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/ProcedureCaller.java
-/home/sfigueroa/TGR/RentaMonedaExtranjera/monex_mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/PkgCajaServicesLogException.java
-/home/sfigueroa/TGR/RentaMonedaExtranjera/monex_mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/GrabaLogTransaccionCaller.java
-/home/sfigueroa/TGR/RentaMonedaExtranjera/monex_mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/GrabaLogTransaccionResult.java
-/home/sfigueroa/TGR/RentaMonedaExtranjera/monex_mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/PkgCajaServicesLogRemote.java
-/home/sfigueroa/TGR/RentaMonedaExtranjera/monex_mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/PkgCajaServicesLog.java
+/Users/sbecker/ARQUITECTURA/Proyecto Contenedores/Fuentes Monex/mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/GrabaLogTransaccionCaller.java
+/Users/sbecker/ARQUITECTURA/Proyecto Contenedores/Fuentes Monex/mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/GrabaLogTransaccionResult.java
+/Users/sbecker/ARQUITECTURA/Proyecto Contenedores/Fuentes Monex/mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/PkgCajaServicesLogRemote.java
+/Users/sbecker/ARQUITECTURA/Proyecto Contenedores/Fuentes Monex/mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/PkgCajaServicesLogLocal.java
+/Users/sbecker/ARQUITECTURA/Proyecto Contenedores/Fuentes Monex/mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/PkgCajaServicesLogException.java
+/Users/sbecker/ARQUITECTURA/Proyecto Contenedores/Fuentes Monex/mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/ProcedureCaller.java
+/Users/sbecker/ARQUITECTURA/Proyecto Contenedores/Fuentes Monex/mig_CajaSrv/PkgCajaServicesLogEJB/ejbModule/cl/teso/reca/pkgcajaserviceslog/PkgCajaServicesLog.java

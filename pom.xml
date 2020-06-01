@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>cl.tesoreria.reca.cajasrv</groupId>
+	<artifactId>CajaSrvApp</artifactId>
+	<version>2.0.0.0</version>
+	<packaging>pom</packaging>
+	<name>Aplicación Cajs Srv Web</name>
+	
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+	
+	<!-- INICIO : Definición de módulos de este proyecto : incluir jar y war propios a construir -->
+	
+	<modules>
+		<module>PkgCajaServicesEJB</module>			<!-- Modulo JAR, EJB-->
+		<module>PkgCajaServicesLogEJB</module>		<!-- Modulo JAR, EJB -->	
+		<module>PkgCajaServicesTrxEJB</module>		<!-- Modulo JAR, EJB -->		
+		<module>CajaSrv</module>					<!-- Modulo WAR, Soap Exposer -->	
+		<module>CajaSrvEAR</module>					<!-- Modulo EAR, Applicacion principal -->	
+	</modules>
+	
+	<!-- FIN : Definición de módulos de este proyecto : incluir jar y war propios a construir -->	
+
+</project>

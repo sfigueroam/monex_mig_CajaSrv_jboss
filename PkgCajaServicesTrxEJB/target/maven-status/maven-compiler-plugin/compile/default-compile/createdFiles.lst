@@ -6,8 +6,8 @@ cl/teso/reca/pkgcajaservicestrx/classes/Messages/MedioPago.class
 cl/teso/reca/pkgcajaservicestrx/ArPagarCajaOtroMtoResult.class
 cl/teso/reca/pkgcajaservicestrx/ArConsultarResult.class
 cl/teso/reca/pkgcajaservicestrx/PkgCajaServicesTrx$1.class
-cl/teso/reca/pkgcajaservicestrx/GetSistemaIncobrablesResult.class
 cl/teso/reca/pkgcajaservicestrx/PkgCajaServicesTrxException.class
+cl/teso/reca/pkgcajaservicestrx/GetSistemaIncobrablesResult.class
 cl/teso/reca/pkgcajaservicestrx/PkgCajaServicesTrxLocal.class
 cl/teso/reca/pkgcajaservicestrx/classes/Messages/AbonoResult.class
 cl/teso/reca/pkgcajaservicestrx/classes/Messages/Tarjeta.class
@@ -18,8 +18,8 @@ cl/teso/reca/pkgcajaservicestrx/ArConsultarCaller.class
 cl/teso/reca/pkgcajaservicestrx/ProcedureCaller.class
 cl/teso/reca/pkgcajaservicestrx/GetRegistrosTrnSafCaller.class
 cl/teso/reca/pkgcajaservicestrx/ConsultaDeudaCajaRsResult.class
-cl/teso/reca/pkgcajaservicestrx/ArPagarCajaCaller.class
 cl/teso/reca/pkgcajaservicestrx/ArPagarCajaResult.class
+cl/teso/reca/pkgcajaservicestrx/ArPagarCajaCaller.class
 cl/teso/reca/pkgcajaservicestrx/PkgCajaServicesTrx$PagoADFResult.class
 cl/teso/reca/pkgcajaservicestrx/PkgCajaServicesTrxRemote.class
 cl/teso/reca/pkgcajaservicestrx/ProcedureResult.class
@@ -28,6 +28,6 @@ cl/teso/reca/pkgcajaservicestrx/GetRegistrosTrnSafResult.class
 cl/teso/reca/pkgcajaservicestrx/ArIngresarListaCaller.class
 cl/teso/reca/pkgcajaservicestrx/classes/Messages/ConsultarDeudaResult.class
 cl/teso/reca/pkgcajaservicestrx/ArPagarCajaOtroMtoCaller.class
-cl/teso/reca/pkgcajaservicestrx/ConsultaDeudaCajaRsCaller.class
-cl/teso/reca/pkgcajaservicestrx/PkgCajaServicesTrx$ProcesarADFResult$ContextADF.class
 cl/teso/reca/pkgcajaservicestrx/classes/Messages/Cheque.class
+cl/teso/reca/pkgcajaservicestrx/PkgCajaServicesTrx$ProcesarADFResult$ContextADF.class
+cl/teso/reca/pkgcajaservicestrx/ConsultaDeudaCajaRsCaller.class
