@@ -53,7 +53,10 @@ import cl.teso.reca.pkgcutservicestrx.classes.PackItemsUtil.ItemType.TipoDatoCut
 import cl.teso.reca.pkgcutservicestrx.classes.PackItemsUtil.TuplasVax;
 import cl.teso.reca.pkgcutservicestrx.classes.Util.TypesUtil;
 import cl.teso.reca.pkgcutservicestrxsaf.messages.ProcesaTrnSafResult;
-
+import org.apache.log4j.Logger;
+import java.io.InputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 
 @Stateless(name="PkgCajaServicesTrx", mappedName="cl.teso.reca.pkgcajaservicestrx.PkgCajaServicesTrx")
@@ -63,10 +66,12 @@ public class PkgCajaServicesTrx implements PkgCajaServicesTrxLocal, PkgCajaServi
 
     private SessionContext sessionContext;
 
-    @Resource(lookup="java:/jdbc/recaDS")
-    private DataSource dataSource;
+    // @Resource(lookup="java:/jdbc/recaDS")
+    // private DataSource dataSource;
+    private static Logger logger = Logger.getLogger("cl.teso.reca.pkgcajaservicestrx.PkgCajaServicesTrx");
+    private DataSource dataSource = cargaDataSource();
+    private static InputStream in = null;
 
-    
     /**
      * Constructor.
      */
@@ -106,7 +111,51 @@ public class PkgCajaServicesTrx implements PkgCajaServicesTrxLocal, PkgCajaServi
     private static String properties$destinoTrx$Vax = "VAX";
     private static String properties$destinoTrx$Aix = "AIX";
     private static String properties$true = "true";
+
+    public static final String FILE_NAME_ME = "CajaSrvEculink.properties";
+    public static String JNDI_DATASOURCE_RECA = "";
+    //public static String JNDI_EJB_PKGCAJASERVICESTRXREMOTE = "";
+    //public static String JNDI_EJB_PKGCAJASERVICESLOGREMOTE = "";
+    public static String JNDI_EJB_PKGCAJASERVICESREMOTE = "";
     
+	private static DataSource cargaDataSource() {
+        try {
+            cargarProperties();
+			Context ctx = new InitialContext();
+			DataSource dataSource = (DataSource)ctx.lookup(JNDI_DATASOURCE_RECA);
+			logger.info("----->>>>> CARGA del properties JNDI_DATASOURCE_RECA=" + JNDI_DATASOURCE_RECA);
+			return dataSource;
+		} catch(Exception ex) {
+			ex.printStackTrace();
+			logger.error("Error en el metodo PkgCajaServicesTrx.cargaDataSource() : " + ex);
+		}
+		return null;
+    }
+    
+    public static void cargarProperties() throws Exception
+    {
+       try
+       {
+          in = PkgCajaServicesTrx.class.getClassLoader().getResourceAsStream(FILE_NAME_ME);
+          Properties prop = new Properties();
+          prop.load(in);
+          logger.info("------>>>>> Carga de cargarProperties Exitosa : " + FILE_NAME_ME);
+
+          JNDI_DATASOURCE_RECA = prop.getProperty("JNDI.DATASOURCE.RECA");
+          //JNDI_EJB_PKGCAJASERVICESTRXREMOTE = prop.getProperty("JNDI.EJB.PKGCAJASERVICESTRXREMOTE");
+          //JNDI_EJB_PKGCAJASERVICESLOGREMOTE = prop.getProperty("JNDI.EJB.PKGCAJASERVICESLOGREMOTE");
+          JNDI_EJB_PKGCAJASERVICESREMOTE = prop.getProperty("JNDI.EJB.PKGCAJASERVICESREMOTE");
+   
+          logger.info("------>>>>> Carga de propiedades Exitosa : ");
+         in.close();
+      } catch (FileNotFoundException e) {
+          // TODO Auto-generated catch block
+          logger.info("Error en el metodo CargarProperties()1 : " + e);
+      } catch (IOException e) {
+          // TODO Auto-generated catch block
+          logger.info("Error en el metodo CargarProperties()2 : " + e);			            
+      }
+    }
 
 	public ConsultarAvisoReciboResult consultaARCaja (BigDecimal  oficinaId, String  avisoReciboCodigo, BigDecimal   formTipo) 
 	{
@@ -1951,11 +2000,13 @@ public class PkgCajaServicesTrx implements PkgCajaServicesTrxLocal, PkgCajaServi
 
     private PkgCajaServicesRemote createPkgCajaServicesRemote
             () throws Exception {
-    	 
+           cargarProperties();
   		   if (pkgCajaServicesRemote == null) {
   		    Context ctx = new InitialContext();
-  		    pkgCajaServicesRemote = (PkgCajaServicesRemote) ctx
-  		    		.lookup("java:global/CajaSrvEAR/PkgCajaServicesEJB/PkgCajaServices!cl.teso.reca.cajasrv.pkgcajaservices.PkgCajaServicesRemote");
+  		    // pkgCajaServicesRemote = (PkgCajaServicesRemote) ctx
+            //           .lookup("java:global/CajaSrvEAR/PkgCajaServicesEJB/PkgCajaServices!cl.teso.reca.cajasrv.pkgcajaservices.PkgCajaServicesRemote");
+            pkgCajaServicesRemote = (PkgCajaServicesRemote) ctx
+                      .lookup(JNDI_EJB_PKGCAJASERVICESREMOTE);
   		   }
 
   		    return pkgCajaServicesRemote;

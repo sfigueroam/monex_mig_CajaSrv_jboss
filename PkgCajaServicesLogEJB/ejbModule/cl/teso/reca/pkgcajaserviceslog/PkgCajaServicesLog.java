@@ -21,6 +21,16 @@ import javax.ejb.TransactionAttributeType;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import org.apache.log4j.Logger;
+import java.io.InputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Properties;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+
 
 @Stateless(name="PkgCajaServicesLog", mappedName="cl.teso.reca.pkgcajaserviceslog.PkgCajaServicesLog")
 @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
@@ -28,13 +38,55 @@ public class PkgCajaServicesLog implements PkgCajaServicesLogLocal, PkgCajaServi
 {
     private static final long serialVersionUID = 1L;
 
-
     public PkgCajaServicesLog() {}
     
     private SessionContext sessionContext;
     
-    @Resource(lookup="java:/jdbc/recaDS")
-    private DataSource dataSource;
+    // @Resource(lookup="java:/jdbc/recaDS")
+    // private DataSource dataSource;
+    private DataSource dataSource = cargaDataSource();
+
+    private static Logger logger = Logger.getLogger("cl.teso.reca.pkgcajaserviceslog.PkgCajaServicesLog");
+    
+    private static InputStream in = null;
+	public static final String FILE_NAME_ME = "CajaSrvEculink.properties";
+    public static String JNDI_DATASOURCE_RECA = "";
+
+	private static DataSource cargaDataSource() {
+        try {
+            cargarProperties();
+			Context ctx = new InitialContext();
+			DataSource dataSource = (DataSource)ctx.lookup(JNDI_DATASOURCE_RECA);
+			logger.info("----->>>>> CARGA del properties JNDI_DATASOURCE_RECA=" + JNDI_DATASOURCE_RECA);
+			return dataSource;
+		} catch(Exception ex) {
+			ex.printStackTrace();
+			logger.error("Error en el metodo PkgCajaServicesTrx.cargaDataSource() : " + ex);
+		}
+		return null;
+    }
+    
+    public static void cargarProperties() throws Exception
+    {
+       try
+       {
+          in = PkgCajaServicesLog.class.getClassLoader().getResourceAsStream(FILE_NAME_ME);
+          Properties prop = new Properties();
+          prop.load(in);
+          logger.info("------>>>>> Carga de cargarProperties Exitosa : " + FILE_NAME_ME);
+
+          JNDI_DATASOURCE_RECA = prop.getProperty("JNDI.DATASOURCE.RECA");
+   
+          logger.info("------>>>>> Carga de propiedades Exitosa : ");
+         in.close();
+      } catch (FileNotFoundException e) {
+          // TODO Auto-generated catch block
+          logger.info("Error en el metodo CargarProperties()1 : " + e);
+      } catch (IOException e) {
+          // TODO Auto-generated catch block
+          logger.info("Error en el metodo CargarProperties()2 : " + e);			            
+      }
+    }
 
 
 	public GrabaLogTransaccionResult grabaLogTransaccion(String inTransaccionNombre, BigDecimal inOficina, BigDecimal inFormulario, String inCodigoAr, String inRutRol, String inParametros, BigDecimal inCodigoRetorno, String inMensajeRetorno, BigDecimal inCodigoRetOracle, String inMensajeRetOracle)
